@@ -1,0 +1,267 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* background*/
+
+body {
+    background-color: #474e5d;
+    background-image: url(../img/estrella-de-la-muerte.png);
+    font-family: Helvetica, sans-serif;
+}
+
+
+/* Línea vertical */
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    /* margin: 0 auto; */
+    margin-left: 170px;
+}
+
+
+/* Línea vertical */
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: yellow;
+    top: 0;
+    bottom: 0;
+    left: 0%;
+    margin-left: -3px;
+}
+
+
+/* Container que rodea a content */
+
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+
+/* Círculos de la línea vertical */
+
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: yellow;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+
+/* Coloca el contenedor a la izquierda */
+
+.left {
+    left: 0;
+}
+
+
+/* Coloca el contenedor a la derecha */
+
+.right {
+    left: 0%;
+}
+
+.righttwo {
+    left: 0%;
+}
+
+
+/* Agrega flechas al contenedor izquierdo (apuntando a la derecha) */
+
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+
+/* Agrega flechas al contenedor derecho (apuntando a la izquierda) */
+
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #61acd8;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #61acd8 transparent transparent;
+}
+
+.righttwo::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #05151f;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #05151f transparent transparent;
+}
+
+.right::after {
+    left: -16px;
+}
+
+.righttwo::after {
+    left: -16px;
+}
+
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    position: relative;
+}
+
+
+/* Media queries - Responsive */
+
+@media screen and (max-width: 600px) {
+    .timeline::after {
+        left: 31px;
+    }
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+    .left::after,
+    .right::after {
+        left: 0px;
+    }
+    .right {
+        left: 0%;
+    }
+}
+
+.number {
+    position: absolute;
+    top: 7px;
+    left: -130px;
+    font-size: 22px;
+    font-weight: bold;
+    color: yellow;
+}
+
+.character-block {
+    padding-bottom: 10px;
+}
+
+.content {
+    padding: 20px 65px;
+    background-color: #61acd8;
+    position: relative;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    /* Agrega un margen inferior para separar los personajes */
+}
+
+.container:nth-child(even) .content {
+    background-color: #05151f;
+    color: #55f4ff;
+    /* Aplica un fondo diferente a los bloques pares */
+    .character-block {
+        margin-bottom: 20px;
+        padding: 10px 15px;
+        background-color: #245e94;
+        border-radius: 6px;
+    }
+    .character-details {
+        background-color: #05151f;
+        padding: 10px;
+        border-radius: 6px;
+    }
+}
+
+.container:nth-child(odd) .content {
+    background-color: #61acd8;
+    /* Aplica un fondo diferente a los bloques impares */
+}
+
+.character-block {
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #245e94;
+    border-radius: 6px;
+}
+
+.character-details {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    color: rgb(42, 140, 206);
+}
+
+.circlered {
+    width: 30px;
+    height: 30px;
+    background: red;
+    opacity: 0.6;
+    position: absolute;
+    top: 3rem;
+    left: 1.3rem;
+    border-radius: 50%;
+}
+
+.circlegreen {
+    width: 30px;
+    height: 30px;
+    background: green;
+    opacity: 0.7;
+    position: absolute;
+    top: 3rem;
+    left: 1.3rem;
+    border-radius: 50%;
+}
+
+.circleblue {
+    width: 30px;
+    height: 30px;
+    background: blue;
+    opacity: 0.6;
+    position: absolute;
+    top: 3rem;
+    left: 1.3rem;
+    border-radius: 50%;
+}
+
+
+/*  &nbsp;&nbsp;  */
